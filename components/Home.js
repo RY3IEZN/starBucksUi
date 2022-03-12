@@ -16,10 +16,11 @@ import data from "../assets/data";
 
 const { height, width } = Dimensions.get("window");
 
-function Home(props) {
+function Home({ navigation }) {
   const Popular = ({ item }) => {
     return (
       <TouchableOpacity
+        onPress={() => navigation.navigate("Details")}
         style={[styles.item, { marginLeft: item.id === "1" ? 20 : 0 }]}
       >
         <Image source={item.image} style={styles.image} />
