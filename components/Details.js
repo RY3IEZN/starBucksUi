@@ -19,7 +19,7 @@ import data from "../assets/data";
 
 const { width } = Dimensions.get("window");
 
-function Details(props) {
+function Details({ navigation }) {
   const scrollX = useRef(new Animated.Value(0)).current;
 
   const Slider = ({ item, index, scrollX }) => {
@@ -72,7 +72,10 @@ function Details(props) {
   return (
     <>
       <View style={styles.topwrapper}>
-        <TouchableOpacity style={styles.backButton}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Home")}
+          style={styles.backButton}
+        >
           <Feather name="chevron-left" size={24} />
         </TouchableOpacity>
         <View style={styles.cart}>
@@ -152,7 +155,10 @@ function Details(props) {
             <View></View>
           </View>
 
-          <TouchableOpacity style={styles.addtocart}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Cart")}
+            style={styles.addtocart}
+          >
             <Text>Add to Cart</Text>
           </TouchableOpacity>
         </View>

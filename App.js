@@ -15,6 +15,13 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="Cart"
+          component={Cart}
+        />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen
           options={{
@@ -23,7 +30,6 @@ export default function App() {
           name="Details"
           component={Details}
         />
-        <Stack.Screen name="Cart" component={Cart} />
       </Stack.Navigator>
     </NavigationContainer>
   );
