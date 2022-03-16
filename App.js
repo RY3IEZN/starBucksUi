@@ -15,8 +15,14 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Details" component={Details} />
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="Details"
+          component={Details}
+        />
         <Stack.Screen name="Cart" component={Cart} />
       </Stack.Navigator>
     </NavigationContainer>
